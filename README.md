@@ -1,5 +1,5 @@
 # awesome-pay
-面向支付，不限语言实现
+面向支付，多语言实现
 
 ## 微信支付
 - [统一下单](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_1)
