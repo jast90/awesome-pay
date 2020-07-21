@@ -1,6 +1,5 @@
 package cn.jast.awesome.pay;
 
-import cn.jast.awesome.pay.operations.WechatPayOperations;
 import cn.jast.awesome.pay.operations.bill.BillQueryOperation;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.BillQueryOperationWechatImpl;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRequestParam;
