@@ -124,4 +124,23 @@ public class WechatOrderResponse {
     public void setCode_url(String code_url) {
         this.code_url = code_url;
     }
+
+    @Override
+    public String toString() {
+        return "WechatOrderResponse{" +
+                "return_code='" + return_code + '\'' +
+                ", return_msg='" + return_msg + '\'' +
+                ", appid='" + appid + '\'' +
+                ", mch_id='" + mch_id + '\'' +
+                ", device_info='" + device_info + '\'' +
+                ", nonce_str='" + nonce_str + '\'' +
+                ", sign='" + sign + '\'' +
+                ", result_code='" + result_code + '\'' +
+                ", err_code='" + err_code + '\'' +
+                ", err_code_des='" + err_code_des + '\'' +
+                ", trade_type='" + trade_type + '\'' +
+                ", prepay_id='" + prepay_id + '\'' +
+                ", code_url='" + code_url + '\'' +
+                '}';
+    }
 }
