@@ -1,0 +1,69 @@
+package cn.jast.awesome.pay;
+
+import cn.jast.awesome.pay.operations.WechatPayOperations;
+import cn.jast.awesome.pay.operations.bill.BillQueryOperation;
+import cn.jast.awesome.pay.operations.bill.impl.wechat.BillQueryOperationWechatImpl;
+import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRequestParam;
+import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryResponse;
+import cn.jast.awesome.pay.operations.order.*;
+import cn.jast.awesome.pay.operations.order.impl.wechat.*;
+import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
+import org.springframework.web.client.RestTemplate;
+
+public class WechatPayTemplate implements WechatPayOperations {
+
+    private RestTemplate restTemplate;
+
+    private RestTemplate sslRestTemplate;
+
+    private String p12URI;
+
+    public WechatPayTemplate() {
+        restTemplate = new RestTemplate();
+    }
+
+    public WechatPayTemplate(String p12URI) {
+        this();
+        //TODO 通过 RestTemplate 发送https请求
+        this.p12URI = p12URI;
+        sslRestTemplate = new RestTemplate();
+    }
+
+    @Override
+    public OrderOperation<WechatOrderRequestParam, WechatOrderResponse> opsForOrder() {
+        return new OrderOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public OrderPrepareOperation<WechatOrderRequestParam, WechatOrderResponse> opsForOrderPrepare() {
+        return new OrderPrepareOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public OrderQueryOperation<WechatOrderQueryRequestParam, WechatOrderQueryResponse> opsForOrderQuery() {
+        return new OrderQueryOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public OrderRefundOperation<WechatOrderRefundRequestParam, WechatOrderRefundResponse> opsForOrderRefund() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("微信退款需要相关证书");
+        }
+        return new OrderRefundOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public OrderRefundQueryOperation<WechatOrderRefundQueryRequestParam, WechatOrderRefundQueryResponse> opsForOrderRefundQuery() {
+        return new OrderRefundQueryOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public OrderCloseOperation<WechatOrderCloseRequestParam, WechatOrderCloseResponse> opsForOrderClose() {
+        return new OrderCloseOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public BillQueryOperation<WechatBillQueryRequestParam, WechatBillQueryResponse> opsForBillQuery() {
+        return new BillQueryOperationWechatImpl(restTemplate);
+    }
+}
