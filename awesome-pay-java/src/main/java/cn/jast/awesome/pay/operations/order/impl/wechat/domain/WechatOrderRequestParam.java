@@ -27,7 +27,7 @@ public class WechatOrderRequestParam {
     private String openid;
     private String receipt;
 
-    private SceneInfo scene_info;
+    private String scene_info;
 
     public static class SceneInfo{
         private String id;
@@ -248,11 +248,11 @@ public class WechatOrderRequestParam {
         this.receipt = receipt;
     }
 
-    public SceneInfo getScene_info() {
+    public String getScene_info() {
         return scene_info;
     }
 
-    public void setScene_info(SceneInfo scene_info) {
+    public void setScene_info(String scene_info) {
         this.scene_info = scene_info;
     }
 }
