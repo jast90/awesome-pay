@@ -1,5 +1,8 @@
 package cn.jast.awesome.pay.operations.bill.impl.wechat.domain;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("xml")
 public class WechatBillQueryResponse {
     private String return_code;
     private String return_msg;

@@ -1,5 +1,8 @@
 package cn.jast.awesome.pay.operations.order.impl.wechat.domain;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("xml")
 public class WechatOrderRefundQueryResponse {
     private String return_code;
     private String return_msg;

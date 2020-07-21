@@ -1,5 +1,8 @@
 package cn.jast.awesome.pay.operations.order.impl.wechat.domain;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("xml")
 public class WechatOrderRefundQueryRequestParam {
     private String appid;
     private String mch_id;
