@@ -1,15 +1,11 @@
 package cn.jast.awesome.pay.operations.order.impl.wechat.domain;
 
+import cn.jast.awesome.pay.domain.wechat.BaseWechatRequestParam;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class WechatOrderRequestParam {
-    private String appid;
-    private String mch_id;
+public class WechatOrderRequestParam extends BaseWechatRequestParam {
     private String device_Info;
-    private String nonce_str;
-    private String sign;
-    private String sign_type;
     private String body;
     private String detail;
     private String attach;
@@ -71,53 +67,12 @@ public class WechatOrderRequestParam {
         }
     }
 
-
-    public String getAppid() {
-        return appid;
-    }
-
-    public void setAppid(String appid) {
-        this.appid = appid;
-    }
-
-    public String getMch_id() {
-        return mch_id;
-    }
-
-    public void setMch_id(String mch_id) {
-        this.mch_id = mch_id;
-    }
-
     public String getDevice_Info() {
         return device_Info;
     }
 
     public void setDevice_Info(String device_Info) {
         this.device_Info = device_Info;
-    }
-
-    public String getNonce_str() {
-        return nonce_str;
-    }
-
-    public void setNonce_str(String nonce_str) {
-        this.nonce_str = nonce_str;
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-
-    public String getSign_type() {
-        return sign_type;
-    }
-
-    public void setSign_type(String sign_type) {
-        this.sign_type = sign_type;
     }
 
     public String getBody() {
