@@ -3,6 +3,7 @@ package cn.jast.awesome.pay.operations.order.impl.wechat;
 import cn.jast.awesome.pay.WechatPayTemplate;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.WechatOrderRequestParam;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.WechatOrderResponse;
+import cn.jast.awesome.pay.util.WechatPayUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +19,13 @@ public class WechatPayTemplateTest {
 
     @Test
     public void order(){
-        WechatOrderResponse wechatOrderResponse = wechatPayTemplate.opsForOrder().order(new WechatOrderRequestParam());
+        WechatOrderRequestParam wechatOrderRequestParam = new WechatOrderRequestParam();
+        wechatOrderRequestParam.setMch_id("1230000109");
+        wechatOrderRequestParam.setSign("123",wechatOrderRequestParam,WechatOrderRequestParam.class,
+                WechatPayUtil.SignType.MD5);
+        wechatOrderRequestParam.setNonceStr();
+        System.out.println(wechatOrderRequestParam);
+        WechatOrderResponse wechatOrderResponse = wechatPayTemplate.opsForOrder().order(wechatOrderRequestParam);
         System.out.println(wechatOrderResponse);
     }
 }

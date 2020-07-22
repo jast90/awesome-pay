@@ -210,4 +210,33 @@ public class WechatOrderRequestParam extends BaseWechatRequestParam {
     public void setScene_info(String scene_info) {
         this.scene_info = scene_info;
     }
+
+    @Override
+    public String toString() {
+        return "WechatOrderRequestParam{" +
+                "device_Info='" + device_Info + '\'' +
+                ", body='" + body + '\'' +
+                ", detail='" + detail + '\'' +
+                ", attach='" + attach + '\'' +
+                ", out_trade_no='" + out_trade_no + '\'' +
+                ", fee_type='" + fee_type + '\'' +
+                ", total_fee=" + total_fee +
+                ", spbill_create_ip='" + spbill_create_ip + '\'' +
+                ", time_start='" + time_start + '\'' +
+                ", time_expire='" + time_expire + '\'' +
+                ", goods_tag='" + goods_tag + '\'' +
+                ", notify_url='" + notify_url + '\'' +
+                ", trade_type='" + trade_type + '\'' +
+                ", product_id='" + product_id + '\'' +
+                ", limit_pay='" + limit_pay + '\'' +
+                ", openid='" + openid + '\'' +
+                ", receipt='" + receipt + '\'' +
+                ", scene_info='" + scene_info + '\'' +
+                ", appid='" + appid + '\'' +
+                ", mch_id='" + mch_id + '\'' +
+                ", sign='" + sign + '\'' +
+                ", nonce_str='" + nonce_str + '\'' +
+                ", sign_type='" + sign_type + '\'' +
+                '}';
+    }
 }

@@ -29,9 +29,8 @@ public class BaseWechatRequestParam {
 
     /**
      * 随机字符串（设置完属性后调用一次）
-     * @param <T>
      */
-    public <T> void setNonceStr(){
+    public void setNonceStr(){
         this.setNonce_str(WechatPayUtil.generateNonceStr());
     }
 
