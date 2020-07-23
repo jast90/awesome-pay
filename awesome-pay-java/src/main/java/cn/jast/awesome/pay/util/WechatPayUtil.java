@@ -103,7 +103,7 @@ public class WechatPayUtil {
      * @throws Exception
      */
     public static <T> String generateSignature(T t, Class<T> clazz, String key, SignType signType){
-        Map<String, String> map = ObjectToMap.objectToMap(t, clazz, true);
+        Map<String, String> map = ObjectUtil.objectToMap(t, clazz, true);
         StringBuilder sb = new StringBuilder();
         for (String k : map.keySet()) {
             if ("sign".equals(k)) {

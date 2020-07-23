@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ObjectToMap {
+public class ObjectUtil {
 
     public static <T> Map<String, String> objectToMap(T t, Class<T> clazz, boolean filterNull){
         try {
