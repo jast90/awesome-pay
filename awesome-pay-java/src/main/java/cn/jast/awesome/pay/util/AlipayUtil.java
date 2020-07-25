@@ -11,6 +11,7 @@ public class AlipayUtil {
 
     /**
      * TODO 待验证
+     * 参考 <a href="https://opendocs.alipay.com/open/291/106118">自行实现签名</a>
      * @param t 待签名参数
      * @param clazz
      * @param privateKey 应用私钥
@@ -18,7 +19,7 @@ public class AlipayUtil {
      * @return
      */
     public static <T> String sign(T t,Class<T> clazz,String privateKey){
-        Sign sign = SecureUtil.sign(SignAlgorithm.SHA256withRSA,privateKey.getBytes(),null);
+        Sign sign = SecureUtil.sign(SignAlgorithm.SHA256withRSA);
         Map<String,String> map = ObjectUtil.objectToMap(t,clazz,true);
         StringBuilder sb = new StringBuilder();
         for (String k : map.keySet()) {
@@ -29,7 +30,9 @@ public class AlipayUtil {
                 sb.append(k).append("=").append(map.get(k).trim()).append("&");
             }
         }
-        sb.deleteCharAt(sb.length()-1);
+        if(sb.length()>0){
+            sb.deleteCharAt(sb.length()-1);
+        }
         return Base64.getEncoder().encodeToString(sign.sign(sb.toString().getBytes()));
     }
 }
