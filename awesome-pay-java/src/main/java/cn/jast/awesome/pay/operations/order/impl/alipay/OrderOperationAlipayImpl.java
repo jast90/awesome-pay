@@ -8,16 +8,12 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OrderOperationAlipayImpl implements OrderOperation<AlipayOrderRequestParam, AlipayOrderResponse> {
+public class OrderOperationAlipayImpl extends OperationBaseAlipayImpl implements OrderOperation<AlipayOrderRequestParam, AlipayOrderResponse> {
 
-    private final String url = "https://openapi.alipay.com/gateway.do?timestamp={timestamp}&method={method}&app_id={appId}&sign_type={signType}&sign={sign}&version={version}&charset={charset}&biz_content={bizContent}";
-
-    private RestTemplate restTemplate;
 
     public OrderOperationAlipayImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+        super(restTemplate);
     }
-
 
     @Override
     public AlipayOrderResponse order(AlipayOrderRequestParam alipayOrderRequestParam) {

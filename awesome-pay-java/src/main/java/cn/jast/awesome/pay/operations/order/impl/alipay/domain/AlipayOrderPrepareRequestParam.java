@@ -6,39 +6,34 @@ import cn.jast.awesome.pay.util.AlipayUtil;
 
 import java.math.BigDecimal;
 
-/**
- * <a href="https://opendocs.alipay.com/apis/api_1/alipay.trade.create">alipay.trade.create(统一收单交易创建接口)</a>
- */
-public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
+public class AlipayOrderPrepareRequestParam extends BaseAlipayRequestParam {
 
-    public AlipayOrderRequestParam(BizContent bizContent,String privateKey) {
-        this.setMethod("alipay.trade.create");
+    public AlipayOrderPrepareRequestParam(BizContent bizContent, String privateKey) {
+        this.setMethod("alipay.trade.precreate");
         this.setBiz_content(JSONUtil.toJsonStr(bizContent));
-        this.setSign(AlipayUtil.sign(this,AlipayOrderRequestParam.class,privateKey));
+        this.setSign(AlipayUtil.sign(this,AlipayOrderPrepareRequestParam.class,privateKey));
     }
 
-
-
-    public static class BizContent {
+    public static class BizContent{
         private String out_trade_no;
         private String seller_id;
         private BigDecimal total_amount;
         private BigDecimal discountable_amount;
         private String subject;
+        private GoodsDetail goodsDetail;
         private String body;
-        private String buyer_id;
-        public GoodsDetail goodsDetail;
         private String product_code;
         private String operator_id;
         private String store_id;
+        private String disable_pay_channels;
+        private String enable_pay_channels;
         private String terminal_id;
-        private ExtendParams extend_params;
+        private ExtendParams extendParams;
         private String timeout_express;
-        private SettleInfo settle_info;
-        private LogisticsDetail logisticsDetail;
-        private BusinessParams business_params;
-
-        private ReceiverAddressInfo receiver_address_info;
+        private SettleInfo settleInfo;
+        private String merchant_order_no;
+        private BusinessParams businessParams;
+        private String qr_code_timeout_express;
 
         public String getOut_trade_no() {
             return out_trade_no;
@@ -80,28 +75,20 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.subject = subject;
         }
 
-        public String getBody() {
-            return body;
-        }
-
-        public void setBody(String body) {
-            this.body = body;
-        }
-
-        public String getBuyer_id() {
-            return buyer_id;
-        }
-
-        public void setBuyer_id(String buyer_id) {
-            this.buyer_id = buyer_id;
-        }
-
         public GoodsDetail getGoodsDetail() {
             return goodsDetail;
         }
 
         public void setGoodsDetail(GoodsDetail goodsDetail) {
             this.goodsDetail = goodsDetail;
+        }
+
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
         }
 
         public String getProduct_code() {
@@ -128,6 +115,22 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.store_id = store_id;
         }
 
+        public String getDisable_pay_channels() {
+            return disable_pay_channels;
+        }
+
+        public void setDisable_pay_channels(String disable_pay_channels) {
+            this.disable_pay_channels = disable_pay_channels;
+        }
+
+        public String getEnable_pay_channels() {
+            return enable_pay_channels;
+        }
+
+        public void setEnable_pay_channels(String enable_pay_channels) {
+            this.enable_pay_channels = enable_pay_channels;
+        }
+
         public String getTerminal_id() {
             return terminal_id;
         }
@@ -136,12 +139,12 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.terminal_id = terminal_id;
         }
 
-        public ExtendParams getExtend_params() {
-            return extend_params;
+        public ExtendParams getExtendParams() {
+            return extendParams;
         }
 
-        public void setExtend_params(ExtendParams extend_params) {
-            this.extend_params = extend_params;
+        public void setExtendParams(ExtendParams extendParams) {
+            this.extendParams = extendParams;
         }
 
         public String getTimeout_express() {
@@ -152,55 +155,55 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.timeout_express = timeout_express;
         }
 
-        public SettleInfo getSettle_info() {
-            return settle_info;
+        public SettleInfo getSettleInfo() {
+            return settleInfo;
         }
 
-        public void setSettle_info(SettleInfo settle_info) {
-            this.settle_info = settle_info;
+        public void setSettleInfo(SettleInfo settleInfo) {
+            this.settleInfo = settleInfo;
         }
 
-        public LogisticsDetail getLogisticsDetail() {
-            return logisticsDetail;
+        public String getMerchant_order_no() {
+            return merchant_order_no;
         }
 
-        public void setLogisticsDetail(LogisticsDetail logisticsDetail) {
-            this.logisticsDetail = logisticsDetail;
+        public void setMerchant_order_no(String merchant_order_no) {
+            this.merchant_order_no = merchant_order_no;
         }
 
-        public BusinessParams getBusiness_params() {
-            return business_params;
+        public BusinessParams getBusinessParams() {
+            return businessParams;
         }
 
-        public void setBusiness_params(BusinessParams business_params) {
-            this.business_params = business_params;
+        public void setBusinessParams(BusinessParams businessParams) {
+            this.businessParams = businessParams;
         }
 
-        public ReceiverAddressInfo getReceiver_address_info() {
-            return receiver_address_info;
+        public String getQr_code_timeout_express() {
+            return qr_code_timeout_express;
         }
 
-        public void setReceiver_address_info(ReceiverAddressInfo receiver_address_info) {
-            this.receiver_address_info = receiver_address_info;
+        public void setQr_code_timeout_express(String qr_code_timeout_express) {
+            this.qr_code_timeout_express = qr_code_timeout_express;
         }
     }
 
-    public static class GoodsDetail {
-        private String good_id;
+    public static class GoodsDetail{
+        private String goods_id;
         private String goods_name;
         private int quantity;
         private BigDecimal price;
         private String goods_category;
-        private String categories_tree;
+        private String categoies_tree;
         private String body;
         private String show_url;
 
-        public String getGood_id() {
-            return good_id;
+        public String getGoods_id() {
+            return goods_id;
         }
 
-        public void setGood_id(String good_id) {
-            this.good_id = good_id;
+        public void setGoods_id(String goods_id) {
+            this.goods_id = goods_id;
         }
 
         public String getGoods_name() {
@@ -235,12 +238,12 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.goods_category = goods_category;
         }
 
-        public String getCategories_tree() {
-            return categories_tree;
+        public String getCategoies_tree() {
+            return categoies_tree;
         }
 
-        public void setCategories_tree(String categories_tree) {
-            this.categories_tree = categories_tree;
+        public void setCategoies_tree(String categoies_tree) {
+            this.categoies_tree = categoies_tree;
         }
 
         public String getBody() {
@@ -260,7 +263,7 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
         }
     }
 
-    public static class ExtendParams {
+    public static class ExtendParams{
         private String sys_service_provider_id;
         private String card_type;
 
@@ -281,28 +284,19 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
         }
     }
 
-    public static class SettleInfo {
-        private SettleDetailInfo settle_detail_infos;
-        private String settle_period_time;
+    public static class SettleInfo{
+        private SettleDetailInfos settleDetailInfos;
 
-        public SettleDetailInfo getSettle_detail_infos() {
-            return settle_detail_infos;
+        public SettleDetailInfos getSettleDetailInfos() {
+            return settleDetailInfos;
         }
 
-        public void setSettle_detail_infos(SettleDetailInfo settle_detail_infos) {
-            this.settle_detail_infos = settle_detail_infos;
-        }
-
-        public String getSettle_period_time() {
-            return settle_period_time;
-        }
-
-        public void setSettle_period_time(String settle_period_time) {
-            this.settle_period_time = settle_period_time;
+        public void setSettleDetailInfos(SettleDetailInfos settleDetailInfos) {
+            this.settleDetailInfos = settleDetailInfos;
         }
     }
 
-    public static class SettleDetailInfo {
+    public static class SettleDetailInfos{
         private String trans_in_type;
         private String trans_in;
         private String summary_dimension;
@@ -359,19 +353,7 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
         }
     }
 
-    public static class LogisticsDetail {
-        private String logistics_type;
-
-        public String getLogistics_type() {
-            return logistics_type;
-        }
-
-        public void setLogistics_type(String logistics_type) {
-            this.logistics_type = logistics_type;
-        }
-    }
-
-    public static class BusinessParams {
+    public static class BusinessParams{
         private String campus_card;
         private String card_type;
         private String actual_order_time;
@@ -400,54 +382,4 @@ public class AlipayOrderRequestParam extends BaseAlipayRequestParam {
             this.actual_order_time = actual_order_time;
         }
     }
-
-    public static class ReceiverAddressInfo {
-        private String name;
-        private String address;
-        private String mobile;
-        private String zip;
-        private String division_code;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getAddress() {
-            return address;
-        }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        public String getMobile() {
-            return mobile;
-        }
-
-        public void setMobile(String mobile) {
-            this.mobile = mobile;
-        }
-
-        public String getZip() {
-            return zip;
-        }
-
-        public void setZip(String zip) {
-            this.zip = zip;
-        }
-
-        public String getDivision_code() {
-            return division_code;
-        }
-
-        public void setDivision_code(String division_code) {
-            this.division_code = division_code;
-        }
-    }
-
-
 }
