@@ -1,5 +1,6 @@
 package cn.jast.awesome.pay;
 
+import cn.jast.awesome.pay.https.client.MySimpleClientHttpsRequestFactory;
 import cn.jast.awesome.pay.operations.bill.BillQueryOperation;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.BillQueryOperationWechatImpl;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRequestParam;
@@ -17,15 +18,17 @@ public class WechatPayTemplate implements WechatPayOperations {
 
     private String p12URI;
 
+    private String mchId;
+
     public WechatPayTemplate() {
         restTemplate = new RestTemplate();
     }
 
-    public WechatPayTemplate(String p12URI) {
+    public WechatPayTemplate(String p12URI,String mchId) {
         this();
-        //TODO 通过 RestTemplate 发送https请求
         this.p12URI = p12URI;
-        sslRestTemplate = new RestTemplate();
+        this.mchId = mchId;
+        sslRestTemplate = new RestTemplate(new MySimpleClientHttpsRequestFactory(p12URI,mchId));
     }
 
     @Override
