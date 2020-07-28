@@ -24,6 +24,11 @@ public class WechatPayTemplate implements WechatPayOperations {
         restTemplate = new RestTemplate();
     }
 
+    /**
+     *
+     * @param p12URI classpath环境下的.p12文件
+     * @param mchId
+     */
     public WechatPayTemplate(String p12URI,String mchId) {
         this();
         this.p12URI = p12URI;
