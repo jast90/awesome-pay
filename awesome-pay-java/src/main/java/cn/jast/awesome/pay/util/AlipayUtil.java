@@ -19,6 +19,7 @@ public class AlipayUtil {
      * @return
      */
     public static <T> String sign(T t,Class<T> clazz,String privateKey){
+        //TODO 通过私钥签名
         Sign sign = SecureUtil.sign(SignAlgorithm.SHA256withRSA);
         Map<String,String> map = ObjectUtil.objectToMap(t,clazz,true);
         StringBuilder sb = new StringBuilder();
