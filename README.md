@@ -2,7 +2,10 @@
 面向支付，多语言实现
 
 ## 微信支付
-### 支付产品接口
+### 境内普通商户 vs. 境内服务商
+TODO 
+### 境内普通商户
+#### 支付产品接口
 - [x] [统一下单](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_1)
 - [x] [查询订单](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_2)
 - [x] [关闭订单](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_3)
@@ -15,8 +18,8 @@
 - [x] [退款结果通知](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_16&index=10)
 - [x] [拉取订单评价数据](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_17&index=11)
 
-### 支付工具接口
-#### 分账
+#### 支付工具接口
+##### 分账
 - [ ] [请求单次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_1&index=1)
 - [ ] [请求多次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_6&index=2)
 - [ ] [查询分账结果](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_2&index=3)
@@ -26,6 +29,11 @@
 - [ ] [分账回退](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=7)
 - [ ] [回退结果查询](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_8&index=8)
 - [ ] [分账动账通知](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_9&index=9)
+
+### 境内服务商
+#### 支付产品接口
+#### 支付工具接口
+#### 商户入驻
 
 ## 支付宝支付
 - [x] [alipay.trade.precreate(统一收单线下交易预创建)-扫码支付](https://opendocs.alipay.com/apis/api_1/alipay.trade.precreate)

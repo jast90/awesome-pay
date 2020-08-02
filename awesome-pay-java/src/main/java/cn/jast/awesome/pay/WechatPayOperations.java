@@ -6,6 +6,9 @@ import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryReq
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryResponse;
 import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingAddReceiverOperation;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverRequestParam;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverResponse;
 
 public interface WechatPayOperations {
 
@@ -52,5 +55,8 @@ public interface WechatPayOperations {
      * @return
      */
     BillQueryOperation<WechatBillQueryRequestParam, WechatBillQueryResponse> opsForBillQuery();
+
+
+    ProfitSharingAddReceiverOperation<ProfitSharingAddReceiverRequestParam, ProfitSharingAddReceiverResponse> opsForProfitSharingAddReceiver();
 
 }

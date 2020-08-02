@@ -8,6 +8,10 @@ import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRes
 import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingAddReceiverOperation;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.ProfitSharingAddReceiverOperationWechatImpl;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverRequestParam;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverResponse;
 import org.springframework.web.client.RestTemplate;
 
 public class WechatPayTemplate implements WechatPayOperations {
@@ -72,5 +76,10 @@ public class WechatPayTemplate implements WechatPayOperations {
     @Override
     public BillQueryOperation<WechatBillQueryRequestParam, WechatBillQueryResponse> opsForBillQuery() {
         return new BillQueryOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public ProfitSharingAddReceiverOperation<ProfitSharingAddReceiverRequestParam, ProfitSharingAddReceiverResponse> opsForProfitSharingAddReceiver() {
+        return new ProfitSharingAddReceiverOperationWechatImpl(restTemplate);
     }
 }

@@ -25,6 +25,11 @@ public class WechatOrderRequestParam extends BaseWechatRequestParam {
 
     private String scene_info;
 
+    /**
+     * 是否需要分账
+     */
+    private String profit_sharing = "N";
+
     public static class SceneInfo{
         private String id;
         private String name;

@@ -1,6 +1,7 @@
 package cn.jast.awesome.pay.domain.wechat;
 
 import cn.jast.awesome.pay.util.WechatPayUtil;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 public class BaseWechatRequestParam {
     protected String appid;
