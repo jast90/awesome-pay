@@ -6,6 +6,8 @@ import cn.jast.awesome.pay.operations.order.impl.wechat.domain.WechatOrderReques
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.WechatOrderResponse;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverRequestParam;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingAddReceiverResponse;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingRemoveReceiverRequestParam;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingRemoveReceiverResponse;
 import cn.jast.awesome.pay.util.WechatPayUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,5 +51,21 @@ public class WechatPayTemplateTest {
         ProfitSharingAddReceiverResponse re = wechatPayTemplate.opsForProfitSharingAddReceiver()
                 .addReceive(profitSharingAddReceiverRequestParam);
         System.out.println(JSONUtil.toJsonPrettyStr(re));
+    }
+
+    @Test
+    public void removeReceiver(){
+        ProfitSharingRemoveReceiverRequestParam profitSharingRemoveReceiverRequestParam = new ProfitSharingRemoveReceiverRequestParam();
+        ProfitSharingRemoveReceiverRequestParam.Receiver receiver = new ProfitSharingRemoveReceiverRequestParam.Receiver();
+        receiver.setType("MERCHANT_ID");
+        receiver.setAccount("86693852");
+        profitSharingRemoveReceiverRequestParam.setMch_id("1900000100");
+        profitSharingRemoveReceiverRequestParam.setAppid("wx8888888888888888");
+        profitSharingRemoveReceiverRequestParam.setNonceStr();
+        profitSharingRemoveReceiverRequestParam.setSign("123",profitSharingRemoveReceiverRequestParam,ProfitSharingRemoveReceiverRequestParam.class
+                , WechatPayUtil.SignType.HMACSHA256);
+        profitSharingRemoveReceiverRequestParam.setReceiver(JSONUtil.toJsonStr(receiver));
+        ProfitSharingRemoveReceiverResponse profitSharingRemoveReceiverResponse = wechatPayTemplate.opsForProfitSharingRemoveReceiver().removeReceiver(profitSharingRemoveReceiverRequestParam);
+        System.out.println(JSONUtil.toJsonPrettyStr(profitSharingRemoveReceiverResponse));
     }
 }
