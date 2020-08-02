@@ -6,10 +6,7 @@ import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryReq
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryResponse;
 import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
-import cn.jast.awesome.pay.operations.profitsharing.MultiProfitSharingOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingAddReceiverOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingRemoveReceiverOperation;
+import cn.jast.awesome.pay.operations.profitsharing.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
 
 public interface WechatPayOperations {
@@ -67,4 +64,11 @@ public interface WechatPayOperations {
 
     MultiProfitSharingOperation<MultiProfitSharingRequestParam,MultiProfitSharingResponse> opsForMultiProfitSharing();
 
+    ProfitSharingQueryOperation<ProfitSharingQueryRequestParam,ProfitSharingQueryResponse> opsForProfitSharingQuery();
+
+    ProfitSharingFinishOperation<ProfitSharingFinishRequestParam,ProfitSharingFinishResponse> opsForProfitSharingFinish();
+
+    ProfitSharingReturnOperation<ProfitSharingReturnRequestParam,ProfitSharingReturnResponse> opsForProfitSharingReturn();
+
+    ProfitSharingReturnQueryOperation<ProfitSharingReturnQueryRequestParam,ProfitSharingReturnQueryResponse> opsForProfitSharingReturnQuery();
 }

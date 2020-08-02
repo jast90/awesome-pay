@@ -8,14 +8,8 @@ import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRes
 import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
-import cn.jast.awesome.pay.operations.profitsharing.MultiProfitSharingOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingAddReceiverOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingOperation;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingRemoveReceiverOperation;
-import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.MultiProfitSharingOperationWechatImpl;
-import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.ProfitSharingAddReceiverOperationWechatImpl;
-import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.ProfitSharingOperationWechatImpl;
-import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.ProfitSharingRemoveReceiverOperationWechatImpl;
+import cn.jast.awesome.pay.operations.profitsharing.*;
+import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -63,7 +57,7 @@ public class WechatPayTemplate implements WechatPayOperations {
     @Override
     public OrderRefundOperation<WechatOrderRefundRequestParam, WechatOrderRefundResponse> opsForOrderRefund() {
         if(sslRestTemplate == null){
-            throw new IllegalArgumentException("微信退款需要相关证书");
+            throw new IllegalArgumentException("需要相关证书");
         }
         return new OrderRefundOperationWechatImpl(sslRestTemplate);
     }
@@ -96,7 +90,7 @@ public class WechatPayTemplate implements WechatPayOperations {
     @Override
     public ProfitSharingOperation<ProfitSharingRequestParam, ProfitSharingResponse> opsForProfitSharingOperation() {
         if(sslRestTemplate == null){
-            throw new IllegalArgumentException("微信退款需要相关证书");
+            throw new IllegalArgumentException("需要相关证书");
         }
         return new ProfitSharingOperationWechatImpl(sslRestTemplate);
     }
@@ -104,8 +98,34 @@ public class WechatPayTemplate implements WechatPayOperations {
     @Override
     public MultiProfitSharingOperation<MultiProfitSharingRequestParam, MultiProfitSharingResponse> opsForMultiProfitSharing() {
         if(sslRestTemplate == null){
-            throw new IllegalArgumentException("微信退款需要相关证书");
+            throw new IllegalArgumentException("需要相关证书");
         }
         return new MultiProfitSharingOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public ProfitSharingQueryOperation<ProfitSharingQueryRequestParam, ProfitSharingQueryResponse> opsForProfitSharingQuery() {
+        return new ProfitSharingQueryOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public ProfitSharingFinishOperation<ProfitSharingFinishRequestParam, ProfitSharingFinishResponse> opsForProfitSharingFinish() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new ProfitSharingFinishOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public ProfitSharingReturnOperation<ProfitSharingReturnRequestParam, ProfitSharingReturnResponse> opsForProfitSharingReturn() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new ProfitSharingReturnOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public ProfitSharingReturnQueryOperation<ProfitSharingReturnQueryRequestParam, ProfitSharingReturnQueryResponse> opsForProfitSharingReturnQuery() {
+        return new ProfitSharingReturnQueryOperationWechatImpl(restTemplate);
     }
 }

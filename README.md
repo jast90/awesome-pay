@@ -27,13 +27,13 @@ TODO
 ##### 分账
 - [x] [请求单次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_1&index=1)
 - [x] [请求多次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_6&index=2)
-- [ ] [查询分账结果](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_2&index=3)
+- [x] [查询分账结果](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_2&index=3)
 - [x] [添加分账接收方](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_3&index=4)
 - [x] [删除分账接收方](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_4&index=5)
-- [ ] [完结分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_5&index=6)
-- [ ] [分账回退](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=7)
-- [ ] [回退结果查询](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_8&index=8)
-- [ ] [分账动账通知](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_9&index=9)
+- [x] [完结分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_5&index=6)
+- [x] [分账回退](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=7)
+- [x] [回退结果查询](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_8&index=8)
+-  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_9&index=9) (通过回调地址获取)
 
 ### 境内服务商
 #### 支付产品接口
