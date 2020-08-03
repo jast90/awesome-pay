@@ -12,7 +12,7 @@ import cn.jast.awesome.pay.operations.redpack.RedPackGetInfoOperation;
 import cn.jast.awesome.pay.operations.redpack.SendGroupRedPackOperation;
 import cn.jast.awesome.pay.operations.redpack.SendMiniProgramRedPackOperation;
 import cn.jast.awesome.pay.operations.redpack.SendRedpackOperation;
-import cn.jast.awesome.pay.operations.redpack.doman.wechat.*;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.domain.*;
 import cn.jast.awesome.pay.operations.transfer.*;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.*;
 

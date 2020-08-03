@@ -1,4 +1,4 @@
-package cn.jast.awesome.pay.operations.redpack.doman.wechat;
+package cn.jast.awesome.pay.operations.redpack.impl.wechat.domain;
 
 import cn.jast.awesome.pay.domain.wechat.BaseWechatResponse;
 

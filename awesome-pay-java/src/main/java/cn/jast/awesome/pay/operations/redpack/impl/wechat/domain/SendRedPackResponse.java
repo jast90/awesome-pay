@@ -1,17 +1,16 @@
-package cn.jast.awesome.pay.operations.redpack.doman.wechat;
+package cn.jast.awesome.pay.operations.redpack.impl.wechat.domain;
 
 import cn.jast.awesome.pay.domain.wechat.BaseWechatResponse;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class SendMiniProgramRedPackResponse extends BaseWechatResponse {
+public class SendRedPackResponse extends BaseWechatResponse {
+
     private String mch_billno;
     private String wxappid;
     private String re_openid;
     private int total_amount;
     private String send_listid;
-    @XStreamAlias("package")
-    private String _package;
 
     public String getMch_billno() {
         return mch_billno;
@@ -51,13 +50,5 @@ public class SendMiniProgramRedPackResponse extends BaseWechatResponse {
 
     public void setSend_listid(String send_listid) {
         this.send_listid = send_listid;
-    }
-
-    public String get_package() {
-        return _package;
-    }
-
-    public void set_package(String _package) {
-        this._package = _package;
     }
 }

@@ -2,8 +2,8 @@ package cn.jast.awesome.pay.operations.redpack.impl.wechat;
 
 import cn.jast.awesome.pay.domain.wechat.BaseOperationWechatImpl;
 import cn.jast.awesome.pay.operations.redpack.SendRedpackOperation;
-import cn.jast.awesome.pay.operations.redpack.doman.wechat.SendRedPackRequest;
-import cn.jast.awesome.pay.operations.redpack.doman.wechat.SendRedPackResponse;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.domain.SendRedPackRequest;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.domain.SendRedPackResponse;
 import org.springframework.web.client.RestTemplate;
 
 public class SendRedPackOperationWechatImpl extends BaseOperationWechatImpl implements
