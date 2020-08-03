@@ -24,6 +24,27 @@ TODO
 - [x] [拉取订单评价数据](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_17&index=11)
 
 #### 支付工具接口
+##### 代金券或立减优惠
+- [ ] [发放代金券](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4)
+- [ ] [查询代金券批次](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_4&index=5)
+- [ ] [查询代金券信息](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_5&index=6)
+
+##### 现金红包
+- [ ] [发放红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3)
+- [ ] [发放裂变红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4)
+- [ ] [发放红包（小程序）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_2&index=3)
+- [ ] [领取红包（小程序，网页）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_3&index=4)
+- [ ] [查询红包记录](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5)
+
+
+##### 企业付款
+- [ ] [企业付款到零钱](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2)
+- [ ] [查询企业付款到零钱](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3)
+- [ ] [企业付款到银行卡](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_2)
+- [ ] [查询企业付款银行卡API](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_3)
+- [ ] [获取RSA加密公钥API](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_7&index=4)
+
+
 ##### 分账
 - [x] [请求单次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_1&index=1)
 - [x] [请求多次分账](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_6&index=2)
@@ -34,12 +55,9 @@ TODO
 - [x] [分账回退](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=7)
 - [x] [回退结果查询](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_8&index=8)
 -  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_9&index=9) (通过回调地址获取)
-##### 企业付款
-- [ ] [企业付款到零钱](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2)
-- [ ] [查询企业付款到零钱](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3)
-- [ ] [企业付款到银行卡](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_2)
-- [ ] [查询企业付款银行卡API](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_3)
-- [ ] [获取RSA加密公钥API](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_7&index=4)
+
+
+
 ### 境内服务商
 #### 支付产品接口
 #### 支付工具接口
