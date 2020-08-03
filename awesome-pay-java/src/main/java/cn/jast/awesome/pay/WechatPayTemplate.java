@@ -11,6 +11,15 @@ import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
 import cn.jast.awesome.pay.operations.profitsharing.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.redpack.RedPackGetInfoOperation;
+import cn.jast.awesome.pay.operations.redpack.SendGroupRedPackOperation;
+import cn.jast.awesome.pay.operations.redpack.SendMiniProgramRedPackOperation;
+import cn.jast.awesome.pay.operations.redpack.SendRedpackOperation;
+import cn.jast.awesome.pay.operations.redpack.doman.wechat.*;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.RedPackGetInfoOperationWechatImpl;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.SendGroupRedPackOperationWechatImpl;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.SendMiniProgramRedPackOperationWechatImpl;
+import cn.jast.awesome.pay.operations.redpack.impl.wechat.SendRedPackOperationWechatImpl;
 import cn.jast.awesome.pay.operations.transfer.*;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.*;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.*;
@@ -170,5 +179,37 @@ public class WechatPayTemplate implements WechatPayOperations {
             throw new IllegalArgumentException("需要相关证书");
         }
         return new PayBankQueryOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public SendRedpackOperation<SendRedPackRequest, SendRedPackResponse> opsForSendRedpackOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new SendRedPackOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public SendGroupRedPackOperation<SendGroupRedPackRequest, SendGroupRedPackResponse> opsForSendGroupRedPackOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new SendGroupRedPackOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public SendMiniProgramRedPackOperation<SendMiniProgramRedPackRequest, SendMiniProgramRedPackResponse> opsForSendMiniProgramRedPackOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new SendMiniProgramRedPackOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public RedPackGetInfoOperation<RedPackGetInfoRequest, RedPackGetInfoResponse> opsForRedPackGetInfoOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new RedPackGetInfoOperationWechatImpl(sslRestTemplate);
     }
 }

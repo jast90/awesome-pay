@@ -8,6 +8,11 @@ import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
 import cn.jast.awesome.pay.operations.profitsharing.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.redpack.RedPackGetInfoOperation;
+import cn.jast.awesome.pay.operations.redpack.SendGroupRedPackOperation;
+import cn.jast.awesome.pay.operations.redpack.SendMiniProgramRedPackOperation;
+import cn.jast.awesome.pay.operations.redpack.SendRedpackOperation;
+import cn.jast.awesome.pay.operations.redpack.doman.wechat.*;
 import cn.jast.awesome.pay.operations.transfer.*;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.*;
 
@@ -88,4 +93,12 @@ public interface WechatPayOperations {
     PayBankOperation<PayBankRequest, PayBankResponse> opsForPayBankOperation();
 
     PayBankQueryOperation<PayBankQueryRequest, PayBankQueryResponse> opsForPayBankQueryOperation();
+
+    SendRedpackOperation<SendRedPackRequest, SendRedPackResponse> opsForSendRedpackOperation();
+
+    SendGroupRedPackOperation<SendGroupRedPackRequest, SendGroupRedPackResponse> opsForSendGroupRedPackOperation();
+
+    SendMiniProgramRedPackOperation<SendMiniProgramRedPackRequest, SendMiniProgramRedPackResponse> opsForSendMiniProgramRedPackOperation();
+
+    RedPackGetInfoOperation<RedPackGetInfoRequest, RedPackGetInfoResponse> opsForRedPackGetInfoOperation();
 }

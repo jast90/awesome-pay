@@ -30,11 +30,11 @@ TODO
 - [ ] [查询代金券信息](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_5&index=6)
 
 ##### 现金红包
-- [ ] [发放红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3)
-- [ ] [发放裂变红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4)
-- [ ] [发放红包（小程序）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_2&index=3)
-- [ ] [领取红包（小程序，网页）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_3&index=4)
-- [ ] [查询红包记录](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5)
+- [x] [发放红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3)
+- [x] [发放裂变红包（微信）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4)
+- [x] [发放红包（小程序）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_2&index=3)
+- [领取红包（小程序，网页调用小程序API）](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=18_3&index=4)
+- [x] [查询红包记录](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5)
 
 
 ##### 企业付款
