@@ -8,6 +8,8 @@ import cn.jast.awesome.pay.operations.order.*;
 import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
 import cn.jast.awesome.pay.operations.profitsharing.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.transfer.*;
+import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.*;
 
 public interface WechatPayOperations {
 
@@ -71,4 +73,19 @@ public interface WechatPayOperations {
     ProfitSharingReturnOperation<ProfitSharingReturnRequestParam,ProfitSharingReturnResponse> opsForProfitSharingReturn();
 
     ProfitSharingReturnQueryOperation<ProfitSharingReturnQueryRequestParam,ProfitSharingReturnQueryResponse> opsForProfitSharingReturnQuery();
+
+    TransferOperation<TransferWechatRequestParam, TransferWechatResponse> opsForTransferOperation();
+
+    TransferInfoGetOperation<TransferInfoGetRequest, TransferInfoGetResponse> opsForTransferInfoGetOperation();
+
+    /**
+     * 调用一次后保存到文件
+     *
+     * @return
+     */
+    PublicKeyGetOperation<PublicKeyGetRequest, PublicKeyGetResponse> opsForPublicKeyGetOperation();
+
+    PayBankOperation<PayBankRequest, PayBankResponse> opsForPayBankOperation();
+
+    PayBankQueryOperation<PayBankQueryRequest, PayBankQueryResponse> opsForPayBankQueryOperation();
 }

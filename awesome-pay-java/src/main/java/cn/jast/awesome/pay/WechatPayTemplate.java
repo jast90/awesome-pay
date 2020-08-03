@@ -11,6 +11,9 @@ import cn.jast.awesome.pay.operations.order.impl.wechat.domain.*;
 import cn.jast.awesome.pay.operations.profitsharing.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.*;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.*;
+import cn.jast.awesome.pay.operations.transfer.*;
+import cn.jast.awesome.pay.operations.transfer.impl.wechat.*;
+import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.*;
 import org.springframework.web.client.RestTemplate;
 
 public class WechatPayTemplate implements WechatPayOperations {
@@ -127,5 +130,45 @@ public class WechatPayTemplate implements WechatPayOperations {
     @Override
     public ProfitSharingReturnQueryOperation<ProfitSharingReturnQueryRequestParam, ProfitSharingReturnQueryResponse> opsForProfitSharingReturnQuery() {
         return new ProfitSharingReturnQueryOperationWechatImpl(restTemplate);
+    }
+
+    @Override
+    public TransferOperation<TransferWechatRequestParam, TransferWechatResponse> opsForTransferOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new TransferOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public TransferInfoGetOperation<TransferInfoGetRequest, TransferInfoGetResponse> opsForTransferInfoGetOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new TransferInfoGetOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public PublicKeyGetOperation<PublicKeyGetRequest, PublicKeyGetResponse> opsForPublicKeyGetOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new PublicKeyGetOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public PayBankOperation<PayBankRequest, PayBankResponse> opsForPayBankOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new PayBankOperationWechatImpl(sslRestTemplate);
+    }
+
+    @Override
+    public PayBankQueryOperation<PayBankQueryRequest, PayBankQueryResponse> opsForPayBankQueryOperation() {
+        if(sslRestTemplate == null){
+            throw new IllegalArgumentException("需要相关证书");
+        }
+        return new PayBankQueryOperationWechatImpl(sslRestTemplate);
     }
 }
