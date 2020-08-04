@@ -123,6 +123,24 @@ public class WechatPayUtil {
         }
     }
 
+    /**
+     * 验证签名
+     * @param t
+     * @param tClass
+     * @param key
+     * @param signType
+     * @param sign
+     * @param <T>
+     * @return
+     */
+    public static <T> boolean validSign(T t,Class<T> tClass,String key,SignType signType,String sign){
+        String si = generateSignature(t,tClass,key,signType);
+        if(si == null){
+            return false;
+        }
+        return si.equals(sign);
+    }
+
     public enum SignType {
         MD5, HMACSHA256
     }
