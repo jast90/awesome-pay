@@ -6,7 +6,7 @@ public class BaseWechatResponse {
 
     private String result_code;
     private String err_code;
-    private String err_code_des;
+    private String err_code_desc;
     private String mch_id;
     private String appid;
     private String nonce_str;
@@ -14,6 +14,10 @@ public class BaseWechatResponse {
 
     public enum ReturnCode{
         SUCCESS,FAIL
+    }
+
+    public boolean isSuccess(){
+        return ReturnCode.SUCCESS.name().equals(getResult_code()) && ReturnCode.SUCCESS.name().equals(getReturn_code());
     }
 
     public String getReturn_code() {
@@ -48,12 +52,12 @@ public class BaseWechatResponse {
         this.err_code = err_code;
     }
 
-    public String getErr_code_des() {
-        return err_code_des;
+    public String getErr_code_desc() {
+        return err_code_desc;
     }
 
-    public void setErr_code_des(String err_code_des) {
-        this.err_code_des = err_code_des;
+    public void setErr_code_desc(String err_code_desc) {
+        this.err_code_desc = err_code_desc;
     }
 
     public String getMch_id() {

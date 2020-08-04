@@ -1,28 +1,11 @@
 package cn.jast.awesome.pay.operations.bill.impl.wechat.domain;
 
+import cn.jast.awesome.pay.domain.wechat.BaseWechatResponse;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class WechatBillQueryResponse {
-    private String return_code;
-    private String return_msg;
+public class WechatBillQueryResponse extends BaseWechatResponse {
     private String error_code;
-
-    public String getReturn_code() {
-        return return_code;
-    }
-
-    public void setReturn_code(String return_code) {
-        this.return_code = return_code;
-    }
-
-    public String getReturn_msg() {
-        return return_msg;
-    }
-
-    public void setReturn_msg(String return_msg) {
-        this.return_msg = return_msg;
-    }
 
     public String getError_code() {
         return error_code;
