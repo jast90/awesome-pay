@@ -12,6 +12,10 @@ public class BaseWechatResponse {
     private String nonce_str;
     private String sign;
 
+    public enum ReturnCode{
+        SUCCESS,FAIL
+    }
+
     public String getReturn_code() {
         return return_code;
     }
