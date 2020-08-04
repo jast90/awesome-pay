@@ -1,31 +1,26 @@
 package cn.jast.awesome.pay.operations.bill.impl.wechat;
 
-import cn.jast.awesome.pay.operations.bill.BillQueryOperation;
+import cn.jast.awesome.pay.domain.wechat.BaseOperationWechatImpl;
+import cn.jast.awesome.pay.operations.WechatOperation;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryRequestParam;
 import cn.jast.awesome.pay.operations.bill.impl.wechat.domain.WechatBillQueryResponse;
 import cn.jast.awesome.pay.util.ClassToXml;
+import cn.jast.awesome.pay.util.WechatPayUtil;
 import org.springframework.web.client.RestTemplate;
 
-public class BillQueryOperationWechatImpl implements BillQueryOperation<WechatBillQueryRequestParam, WechatBillQueryResponse> {
+public class BillQueryOperationWechatImpl extends BaseOperationWechatImpl implements
+        WechatOperation<WechatBillQueryRequestParam, WechatBillQueryResponse> {
 
     private final String url = "https://api.mch.weixin.qq.com/pay/downloadbill";
 
-    private RestTemplate restTemplate;
-
     public BillQueryOperationWechatImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+        super(restTemplate);
+        setUrl(url);
     }
 
     @Override
-    public WechatBillQueryResponse billQuery(WechatBillQueryRequestParam wechatBillQueryRequestParam) {
-        WechatBillQueryResponse wechatBillQueryResponse = null;
-        String response = restTemplate.postForObject(url, ClassToXml.objectToXML(wechatBillQueryRequestParam),String.class);
-        try {
-            String xml = new String(response.getBytes("iso-8859-1"),"utf-8");
-            wechatBillQueryResponse = ClassToXml.xmlToObject(xml,WechatBillQueryResponse.class);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return wechatBillQueryResponse;
+    public WechatBillQueryResponse operation(WechatBillQueryRequestParam wechatBillQueryRequestParam,String key) {
+        return doRequestISO88591(wechatBillQueryRequestParam,WechatBillQueryRequestParam.class,
+                WechatBillQueryResponse.class, WechatPayUtil.SignType.MD5,key);
     }
 }

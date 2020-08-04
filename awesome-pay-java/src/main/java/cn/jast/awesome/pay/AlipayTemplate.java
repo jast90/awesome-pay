@@ -1,9 +1,6 @@
 package cn.jast.awesome.pay;
 
-import cn.jast.awesome.pay.operations.order.OrderOperation;
-import cn.jast.awesome.pay.operations.order.OrderPrepareOperation;
-import cn.jast.awesome.pay.operations.order.OrderQueryOperation;
-import cn.jast.awesome.pay.operations.order.OrderRefundOperation;
+import cn.jast.awesome.pay.operations.AlipayOperation;
 import cn.jast.awesome.pay.operations.order.impl.alipay.OrderOperationAlipayImpl;
 import cn.jast.awesome.pay.operations.order.impl.alipay.OrderPrepareOperationAlipayImpl;
 import cn.jast.awesome.pay.operations.order.impl.alipay.OrderQueryOperationAlipayImpl;
@@ -28,22 +25,22 @@ public class AlipayTemplate implements AlipayOperations {
     }
 
     @Override
-    public OrderOperation<AlipayOrderRequestParam, AlipayOrderResponse> opsForOrder() {
+    public AlipayOperation<AlipayOrderRequestParam, AlipayOrderResponse> opsForOrder() {
         return new OrderOperationAlipayImpl(restTemplate);
     }
 
     @Override
-    public OrderPrepareOperation<AlipayOrderPrepareRequestParam, AlipayOrderPrepareResponse> opsForOrderPrepare() {
+    public AlipayOperation<AlipayOrderPrepareRequestParam, AlipayOrderPrepareResponse> opsForOrderPrepare() {
         return new OrderPrepareOperationAlipayImpl(restTemplate);
     }
 
     @Override
-    public OrderQueryOperation<AlipayOrderQueryRequestOParam, AlipayOrderQueryResponse> opsForOrderQueryOperation() {
+    public AlipayOperation<AlipayOrderQueryRequestOParam, AlipayOrderQueryResponse> opsForOrderQueryOperation() {
         return new OrderQueryOperationAlipayImpl(restTemplate);
     }
 
     @Override
-    public OrderRefundOperation<AlipayOrderRefundRequestParam, AlipayOrderRefundResponse> opsForOrderRefundOperation() {
+    public AlipayOperation<AlipayOrderRefundRequestParam, AlipayOrderRefundResponse> opsForOrderRefundOperation() {
         return new OrderRefundOperationAlipayImpl(restTemplate);
     }
 }

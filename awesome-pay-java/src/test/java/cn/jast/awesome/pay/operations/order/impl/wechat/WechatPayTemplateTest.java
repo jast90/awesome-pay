@@ -16,6 +16,8 @@ public class WechatPayTemplateTest {
 
     private WechatPayTemplate wechatPayTemplate;
 
+    private String key = "123";
+
     @Before
     public void setUp(){
         wechatPayTemplate = new WechatPayTemplate();
@@ -30,7 +32,7 @@ public class WechatPayTemplateTest {
                 WechatPayUtil.SignType.MD5);
         wechatOrderRequestParam.setNonceStr();
         System.out.println(wechatOrderRequestParam);
-        WechatOrderResponse wechatOrderResponse = wechatPayTemplate.opsForOrder().order(wechatOrderRequestParam);
+        WechatOrderResponse wechatOrderResponse = wechatPayTemplate.opsForOrder().operation(wechatOrderRequestParam,key);
         System.out.println(wechatOrderResponse);
     }
 
@@ -49,7 +51,7 @@ public class WechatPayTemplateTest {
                 , WechatPayUtil.SignType.HMACSHA256);
         profitSharingAddReceiverRequestParam.setReceiver(JSONUtil.toJsonStr(receiver));
         ProfitSharingAddReceiverResponse re = wechatPayTemplate.opsForProfitSharingAddReceiver()
-                .addReceive(profitSharingAddReceiverRequestParam);
+                .operation(profitSharingAddReceiverRequestParam,key);
         System.out.println(JSONUtil.toJsonPrettyStr(re));
     }
 
@@ -65,7 +67,8 @@ public class WechatPayTemplateTest {
         profitSharingRemoveReceiverRequestParam.setSign("123",profitSharingRemoveReceiverRequestParam,ProfitSharingRemoveReceiverRequestParam.class
                 , WechatPayUtil.SignType.HMACSHA256);
         profitSharingRemoveReceiverRequestParam.setReceiver(JSONUtil.toJsonStr(receiver));
-        ProfitSharingRemoveReceiverResponse profitSharingRemoveReceiverResponse = wechatPayTemplate.opsForProfitSharingRemoveReceiver().removeReceiver(profitSharingRemoveReceiverRequestParam);
+        ProfitSharingRemoveReceiverResponse profitSharingRemoveReceiverResponse = wechatPayTemplate.opsForProfitSharingRemoveReceiver()
+                .operation(profitSharingRemoveReceiverRequestParam,key);
         System.out.println(JSONUtil.toJsonPrettyStr(profitSharingRemoveReceiverResponse));
     }
 }

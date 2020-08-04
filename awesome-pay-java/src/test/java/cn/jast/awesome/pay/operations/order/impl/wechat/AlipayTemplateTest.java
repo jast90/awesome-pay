@@ -28,7 +28,7 @@ public class AlipayTemplateTest {
         bizContent.setBuyer_id("123");
         AlipayOrderRequestParam alipayOrderRequestParam = new AlipayOrderRequestParam(bizContent,privateKey);
         alipayOrderRequestParam.setApp_id("123455");
-        AlipayOrderResponse alipayOrderResponse = alipayTemplate.opsForOrder().order(alipayOrderRequestParam);
+        AlipayOrderResponse alipayOrderResponse = alipayTemplate.opsForOrder().operation(alipayOrderRequestParam);
         System.out.println(JSONUtil.toJsonPrettyStr(alipayOrderResponse));
     }
 }

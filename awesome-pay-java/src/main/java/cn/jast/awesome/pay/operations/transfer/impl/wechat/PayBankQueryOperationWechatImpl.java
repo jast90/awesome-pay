@@ -1,13 +1,14 @@
 package cn.jast.awesome.pay.operations.transfer.impl.wechat;
 
 import cn.jast.awesome.pay.domain.wechat.BaseOperationWechatImpl;
-import cn.jast.awesome.pay.operations.transfer.PayBankQueryOperation;
+import cn.jast.awesome.pay.operations.WechatOperation;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.PayBankQueryRequest;
 import cn.jast.awesome.pay.operations.transfer.impl.wechat.domain.PayBankQueryResponse;
+import cn.jast.awesome.pay.util.WechatPayUtil;
 import org.springframework.web.client.RestTemplate;
 
 public class PayBankQueryOperationWechatImpl extends BaseOperationWechatImpl implements
-        PayBankQueryOperation<PayBankQueryRequest, PayBankQueryResponse> {
+        WechatOperation<PayBankQueryRequest, PayBankQueryResponse> {
     private final String url = "https://api.mch.weixin.qq.com/mmpaysptrans/query_bank" ;
 
     public PayBankQueryOperationWechatImpl(RestTemplate restTemplate) {
@@ -17,7 +18,9 @@ public class PayBankQueryOperationWechatImpl extends BaseOperationWechatImpl imp
 
 
     @Override
-    public PayBankQueryResponse queryBank(PayBankQueryRequest payBankQueryRequest) {
-        return doRequest(payBankQueryRequest,PayBankQueryResponse.class);
+    public PayBankQueryResponse operation(PayBankQueryRequest payBankQueryRequest,String key) {
+        return doRequest(payBankQueryRequest,PayBankQueryRequest.class,PayBankQueryResponse.class,
+                WechatPayUtil.SignType.MD5,key
+                );
     }
 }

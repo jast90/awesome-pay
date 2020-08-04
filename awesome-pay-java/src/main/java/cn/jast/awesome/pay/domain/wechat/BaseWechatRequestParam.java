@@ -22,7 +22,7 @@ public class BaseWechatRequestParam {
      * @param signType
      * @param <T>
      */
-    public <T> void setSign(String key, T t , Class<T> clazz, WechatPayUtil.SignType signType){
+    public <T extends BaseWechatRequestParam> void setSign(String key, T t , Class<T> clazz, WechatPayUtil.SignType signType){
         String sign = WechatPayUtil.generateSignature(t,clazz,key,signType);
         this.setSign(sign);
     }

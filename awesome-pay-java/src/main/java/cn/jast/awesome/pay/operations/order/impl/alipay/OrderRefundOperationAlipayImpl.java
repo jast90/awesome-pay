@@ -1,6 +1,6 @@
 package cn.jast.awesome.pay.operations.order.impl.alipay;
 
-import cn.jast.awesome.pay.operations.order.OrderRefundOperation;
+import cn.jast.awesome.pay.operations.AlipayOperation;
 import cn.jast.awesome.pay.operations.order.impl.alipay.domain.AlipayOrderRefundRequestParam;
 import cn.jast.awesome.pay.operations.order.impl.alipay.domain.AlipayOrderRefundResponse;
 import org.springframework.web.client.RestTemplate;
@@ -8,15 +8,15 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OrderRefundOperationAlipayImpl extends OperationBaseAlipayImpl implements OrderRefundOperation<AlipayOrderRefundRequestParam,
-        AlipayOrderRefundResponse> {
+public class OrderRefundOperationAlipayImpl extends OperationBaseAlipayImpl implements
+        AlipayOperation<AlipayOrderRefundRequestParam,AlipayOrderRefundResponse> {
 
     public OrderRefundOperationAlipayImpl(RestTemplate restTemplate) {
         super(restTemplate);
     }
 
     @Override
-    public AlipayOrderRefundResponse orderRefund(AlipayOrderRefundRequestParam alipayOrderRefundRequestParam) {
+    public AlipayOrderRefundResponse operation(AlipayOrderRefundRequestParam alipayOrderRefundRequestParam) {
         Map<String,String> map = new HashMap<>();
         map.put("timestamp",alipayOrderRefundRequestParam.getTimestamp());
         map.put("method",alipayOrderRefundRequestParam.getMethod());

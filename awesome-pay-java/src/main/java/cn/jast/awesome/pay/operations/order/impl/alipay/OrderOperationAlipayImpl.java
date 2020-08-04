@@ -1,6 +1,7 @@
 package cn.jast.awesome.pay.operations.order.impl.alipay;
 
-import cn.jast.awesome.pay.operations.order.OrderOperation;
+import cn.jast.awesome.pay.operations.AlipayOperation;
+import cn.jast.awesome.pay.operations.WechatOperation;
 import cn.jast.awesome.pay.operations.order.impl.alipay.domain.AlipayOrderRequestParam;
 import cn.jast.awesome.pay.operations.order.impl.alipay.domain.AlipayOrderResponse;
 import org.springframework.web.client.RestTemplate;
@@ -8,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OrderOperationAlipayImpl extends OperationBaseAlipayImpl implements OrderOperation<AlipayOrderRequestParam, AlipayOrderResponse> {
+public class OrderOperationAlipayImpl extends OperationBaseAlipayImpl implements
+        AlipayOperation<AlipayOrderRequestParam, AlipayOrderResponse> {
 
 
     public OrderOperationAlipayImpl(RestTemplate restTemplate) {
@@ -16,7 +18,7 @@ public class OrderOperationAlipayImpl extends OperationBaseAlipayImpl implements
     }
 
     @Override
-    public AlipayOrderResponse order(AlipayOrderRequestParam alipayOrderRequestParam) {
+    public AlipayOrderResponse operation(AlipayOrderRequestParam alipayOrderRequestParam) {
         Map<String,String> map = new HashMap<>();
         map.put("timestamp",alipayOrderRequestParam.getTimestamp());
         map.put("method",alipayOrderRequestParam.getMethod());

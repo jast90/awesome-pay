@@ -1,14 +1,15 @@
 package cn.jast.awesome.pay.operations.profitsharing.impl.wechat;
 
 import cn.jast.awesome.pay.domain.wechat.BaseOperationWechatImpl;
-import cn.jast.awesome.pay.operations.profitsharing.ProfitSharingOperation;
+import cn.jast.awesome.pay.operations.WechatOperation;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingRequestParam;
 import cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain.ProfitSharingResponse;
+import cn.jast.awesome.pay.util.WechatPayUtil;
 import org.springframework.web.client.RestTemplate;
 
 
-public class ProfitSharingOperationWechatImpl extends BaseOperationWechatImpl implements ProfitSharingOperation<ProfitSharingRequestParam,
-        ProfitSharingResponse> {
+public class ProfitSharingOperationWechatImpl extends BaseOperationWechatImpl implements
+        WechatOperation<ProfitSharingRequestParam,ProfitSharingResponse> {
 
     private final String url="https://api.mch.weixin.qq.com/secapi/pay/profitsharing";
 
@@ -23,7 +24,9 @@ public class ProfitSharingOperationWechatImpl extends BaseOperationWechatImpl im
      * @return
      */
     @Override
-    public ProfitSharingResponse profitSharing(ProfitSharingRequestParam profitSharingRequestParam) {
-        return doRequest(profitSharingRequestParam,ProfitSharingResponse.class);
+    public ProfitSharingResponse operation(ProfitSharingRequestParam profitSharingRequestParam,String key) {
+        return doRequest(profitSharingRequestParam,ProfitSharingRequestParam.class,ProfitSharingResponse.class,
+                WechatPayUtil.SignType.MD5,key
+                );
     }
 }
