@@ -1,11 +1,11 @@
 package cn.jast.awesome.pay.operations.order.impl.wechat.domain;
 
 
-import cn.jast.awesome.pay.domain.wechat.BaseWechatRequestParam;
+import cn.jast.awesome.pay.domain.wechat.BaseWechatRequest;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class WechatOrderCloseRequestParam extends BaseWechatRequestParam {
+public class WechatOrderCloseRequestParam extends BaseWechatRequest {
     private String out_trade_no;
 
     public String getOut_trade_no() {

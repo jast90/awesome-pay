@@ -1,10 +1,10 @@
 package cn.jast.awesome.pay.operations.profitsharing.impl.wechat.domain;
 
-import cn.jast.awesome.pay.domain.wechat.BaseWechatRequestParam;
+import cn.jast.awesome.pay.domain.wechat.BaseWechatRequest;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class ProfitSharingReturnRequestParam extends BaseWechatRequestParam {
+public class ProfitSharingReturnRequestParam extends BaseWechatRequest {
     private String order_id;
     private String out_order_no;
     private String out_return_no;

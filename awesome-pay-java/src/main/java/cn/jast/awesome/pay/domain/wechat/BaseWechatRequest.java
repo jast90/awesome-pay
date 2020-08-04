@@ -2,7 +2,7 @@ package cn.jast.awesome.pay.domain.wechat;
 
 import cn.jast.awesome.pay.util.WechatPayUtil;
 
-public class BaseWechatRequestParam {
+public class BaseWechatRequest {
     protected String appid;
 
     protected String mch_id;
@@ -22,7 +22,7 @@ public class BaseWechatRequestParam {
      * @param signType
      * @param <T>
      */
-    public <T extends BaseWechatRequestParam> void setSign(String key, T t , Class<T> clazz, WechatPayUtil.SignType signType){
+    public <T extends BaseWechatRequest> void setSign(String key, T t , Class<T> clazz, WechatPayUtil.SignType signType){
         String sign = WechatPayUtil.generateSignature(t,clazz,key,signType);
         this.setSign(sign);
     }

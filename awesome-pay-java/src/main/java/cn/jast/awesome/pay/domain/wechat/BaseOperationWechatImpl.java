@@ -16,9 +16,9 @@ public class BaseOperationWechatImpl {
         this.restTemplate = restTemplate;
     }
 
-    protected <P extends BaseWechatRequestParam, R> R doRequest(P p,Class<P> pClass, Class<R> rClass,
-                                                                WechatPayUtil.SignType signType,
-                                                                String key) {
+    protected <P extends BaseWechatRequest, R> R doRequest(P p, Class<P> pClass, Class<R> rClass,
+                                                           WechatPayUtil.SignType signType,
+                                                           String key) {
         p.setNonce_str(WechatPayUtil.generateNonceStr());
         p.setSign(key,p,pClass,signType);
         String xml = ClassToXml.objectToXML(p);
@@ -34,9 +34,9 @@ public class BaseOperationWechatImpl {
         return r;
     }
 
-    protected <P extends BaseWechatRequestParam, R> R doRequestISO88591(P p,Class<P> pClass, Class<R> rClass,
-                                                                        WechatPayUtil.SignType signType,
-                                                                        String key) {
+    protected <P extends BaseWechatRequest, R> R doRequestISO88591(P p, Class<P> pClass, Class<R> rClass,
+                                                                   WechatPayUtil.SignType signType,
+                                                                   String key) {
         p.setNonce_str(WechatPayUtil.generateNonceStr());
         p.setSign(key,p,pClass,signType);
         String xml = ClassToXml.objectToXML(p);

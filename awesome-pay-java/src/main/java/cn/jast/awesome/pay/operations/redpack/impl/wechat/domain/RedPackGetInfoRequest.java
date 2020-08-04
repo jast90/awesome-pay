@@ -1,10 +1,10 @@
 package cn.jast.awesome.pay.operations.redpack.impl.wechat.domain;
 
-import cn.jast.awesome.pay.domain.wechat.BaseWechatRequestParam;
+import cn.jast.awesome.pay.domain.wechat.BaseWechatRequest;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("xml")
-public class RedPackGetInfoRequest extends BaseWechatRequestParam {
+public class RedPackGetInfoRequest extends BaseWechatRequest {
     private String mch_billno;
     private String bill_type;
 
