@@ -3,14 +3,16 @@ package cn.jast.awesome.pay.operations.order.impl.wechat.domain;
 import cn.jast.awesome.pay.domain.wechat.BaseWechatRequest;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import java.math.BigDecimal;
+
 @XStreamAlias("xml")
 public class WechatOrderRefundRequestParam extends BaseWechatRequest {
 
     private String transaction_id;
     private String out_trade_no;
     private String out_refund_no;
-    private String total_fee;
-    private String refund_fee;
+    private int total_fee;
+    private int refund_fee;
     private String refund_fee_type;
     private String refund_desc;
     private String refund_account;
@@ -40,19 +42,19 @@ public class WechatOrderRefundRequestParam extends BaseWechatRequest {
         this.out_refund_no = out_refund_no;
     }
 
-    public String getTotal_fee() {
+    public int getTotal_fee() {
         return total_fee;
     }
 
-    public void setTotal_fee(String total_fee) {
+    public void setTotal_fee(int total_fee) {
         this.total_fee = total_fee;
     }
 
-    public String getRefund_fee() {
+    public int getRefund_fee() {
         return refund_fee;
     }
 
-    public void setRefund_fee(String refund_fee) {
+    public void setRefund_fee(int refund_fee) {
         this.refund_fee = refund_fee;
     }
 
