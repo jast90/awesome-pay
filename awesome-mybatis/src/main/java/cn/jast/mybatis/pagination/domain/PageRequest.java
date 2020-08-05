@@ -32,6 +32,6 @@ public class PageRequest {
          *  第2页，每页15条：offset=15
          *  第3页，每页15条：offset=30
          */
-        return (pageSize-1) * pageNumber;
+        return (pageNumber-1) * pageSize;
     }
 }
