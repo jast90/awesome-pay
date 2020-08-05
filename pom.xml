@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.jast</groupId>
-    <artifactId>awesome-tool</artifactId>
+    <artifactId>awesome-tools-java</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -16,4 +16,12 @@
         <module>awesome-pay-java</module>
         <module>awesome-mybatis</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/jast90/awesome-tools-java</url>
+        </repository>
+    </distributionManagement>
 </project>

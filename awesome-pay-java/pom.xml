@@ -6,9 +6,9 @@
 
   <parent>
     <groupId>cn.jast</groupId>
-    <artifactId>awesome-tool</artifactId>
+    <artifactId>awesome-tools-java</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>./pom.xml</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>awesome-pay-java</artifactId>
@@ -58,7 +58,7 @@
     <repository>
       <id>github</id>
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/jast90/awesome-pay</url>
+      <url>https://maven.pkg.github.com/jast90/awesome-tools-java</url>
     </repository>
   </distributionManagement>
   <build>
