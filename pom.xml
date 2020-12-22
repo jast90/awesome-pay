@@ -13,8 +13,9 @@
     </properties>
 
     <modules>
-        <module>awesome-pay-java</module>
-        <module>awesome-mybatis</module>
+        <module>zhangtool-pay</module>
+        <module>zhangtool-mybatis</module>
+        <module>zhangtool-amap</module>
     </modules>
 
     <distributionManagement>

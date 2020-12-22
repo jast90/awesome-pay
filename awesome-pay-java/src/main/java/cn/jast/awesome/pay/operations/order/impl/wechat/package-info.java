@@ -1,1 +1,0 @@
-package cn.jast.awesome.pay.operations.order.impl.wechat;
