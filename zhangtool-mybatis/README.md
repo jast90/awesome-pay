@@ -6,8 +6,8 @@
 ### 引入依赖
 ```xml
 <dependency>
-    <groupId>cn.jast</groupId>
-    <artifactId>awesome-mybatis</artifactId>
+    <groupId>io.github.jast90</groupId>
+    <artifactId>zhangtool-mybatis</artifactId>
     <version>latest-version</version>
 </dependency>
 ```

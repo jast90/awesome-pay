@@ -6,17 +6,13 @@
     <artifactId>awesome-tools-java</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>awesome-tools-java</name>
+    <description>Java Tools</description>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
-
-    <modules>
-        <module>zhangtool-pay</module>
-        <module>zhangtool-mybatis</module>
-        <module>zhangtool-amap</module>
-    </modules>
 
     <distributionManagement>
         <repository>
@@ -25,4 +21,96 @@
             <url>https://maven.pkg.github.com/jast90/awesome-tools-java</url>
         </repository>
     </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>Server Side Public License</name>
+            <url>https://www.mongodb.com/licensing/server-side-public-license</url>
+            <distribution>repo</distribution>
+            <comments>A not business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jast90/awesome-tools-java</url>
+        <connection>https://github.com/jast90/awesome-tools-java.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <name>zhangzhiwen</name>
+            <id>zhangzhiwen</id>
+            <email>zhangz_w45@163.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <modules>
+        <module>zhangtool-pay</module>
+        <module>zhangtool-mybatis</module>
+        <module>zhangtool-amap</module>
+    </modules>
 </project>
