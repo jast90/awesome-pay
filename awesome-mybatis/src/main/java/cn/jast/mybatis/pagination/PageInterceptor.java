@@ -71,11 +71,11 @@ public class PageInterceptor implements Interceptor {
             return invocation.proceed();
         }
 
-        BoundSql pageBoundSql = pageBoundSql(ms.getConfiguration(), boundSql, pageRequest, parameter);
         long total = queryTotal(newCountMappedStatement(ms, String.format("%s%s", ms.getId(), "_COUNT")), executor
                 , boundSql, parameter, resultHandler);
         List list = new ArrayList();
         if(total>0){
+            BoundSql pageBoundSql = pageBoundSql(ms.getConfiguration(), boundSql, pageRequest, parameter);
             list = executor.query(ms, parameter, rowBounds, resultHandler, cacheKey, pageBoundSql);
         }
         Page page = new Page(total,list, pageRequest);
@@ -120,6 +120,7 @@ public class PageInterceptor implements Interceptor {
         String pageSql = null;
         switch (this.dbType) {
             case MYSQL:
+                //TODO 还可以优化下
                 pageSql = String.format("select * from (%s) as temp limit %s,%s", boundSql.getSql(), pageRequest.getOffset(),
                         pageRequest.getPageSize());
         }
