@@ -14,7 +14,7 @@
 ```
 #### 创建并使用`AMapTemplate`
 ```java
-AMapTemplate amapTemplate = new AMapTemplate(key);
+AMapTemplate amapTemplate = new AMapTemplate(key);//key高德地图申请的key
 Point point = amapTemplate.opsForGeo().singleGeoCode(key, "地址");
 ```
 

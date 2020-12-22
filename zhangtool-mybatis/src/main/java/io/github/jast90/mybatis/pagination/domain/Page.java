@@ -1,4 +1,4 @@
-package cn.jast.mybatis.pagination.domain;
+package io.github.jast90.mybatis.pagination.domain;
 
 import java.util.List;
 

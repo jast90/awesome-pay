@@ -1,6 +1,6 @@
-package cn.jast.config;
+package io.github.jast90.mybatis.config;
 
-import cn.jast.mybatis.pagination.PageInterceptor;
+import io.github.jast90.mybatis.pagination.PageInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

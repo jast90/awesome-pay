@@ -1,4 +1,4 @@
-package cn.jast.mybatis.pagination;
+package io.github.jast90.mybatis.pagination;
 
 /**
  * @author zhiwen

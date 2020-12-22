@@ -1,4 +1,4 @@
-package cn.jast.mybatis.pagination.domain;
+package io.github.jast90.mybatis.pagination.domain;
 
 public class PageRequest {
     /**

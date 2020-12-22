@@ -15,8 +15,8 @@
 ```java
 package cn.jast.payment.mapper;
 
-import cn.jast.mybatis.pagination.domain.PageList;
-import cn.jast.mybatis.pagination.domain.PageRequest;
+import io.github.jast90.mybatis.pagination.domain.PageList;
+import io.github.jast90.mybatis.pagination.domain.PageRequest;
 import cn.jast.payment.entity.Order;
 import org.apache.ibatis.annotations.Param;
 

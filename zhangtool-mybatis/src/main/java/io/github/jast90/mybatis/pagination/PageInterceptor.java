@@ -1,8 +1,8 @@
-package cn.jast.mybatis.pagination;
+package io.github.jast90.mybatis.pagination;
 
-import cn.jast.mybatis.pagination.domain.Page;
-import cn.jast.mybatis.pagination.domain.PageList;
-import cn.jast.mybatis.pagination.domain.PageRequest;
+import io.github.jast90.mybatis.pagination.domain.Page;
+import io.github.jast90.mybatis.pagination.domain.PageList;
+import io.github.jast90.mybatis.pagination.domain.PageRequest;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
