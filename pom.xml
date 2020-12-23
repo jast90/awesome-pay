@@ -32,7 +32,7 @@
     </licenses>
     <scm>
         <url>https://github.com/jast90/awesome-tools-java</url>
-        <connection>https://github.com/jast90/awesome-tools-java.git</connection>
+        <connection>scm:git:https://github.com/jast90/awesome-tools-java.git</connection>
     </scm>
     <developers>
         <developer>
