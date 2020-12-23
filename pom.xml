@@ -7,19 +7,14 @@
     <packaging>pom</packaging>
     <name>awesome-tools-java</name>
     <description>Java Tools</description>
+    <url>https://github.com/jast90/awesome-tools-java</url>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/jast90/awesome-tools-java</url>
-        </repository>
-    </distributionManagement>
+
 
     <licenses>
         <license>
@@ -47,6 +42,16 @@
     </developers>
 
     <profiles>
+        <profile>
+            <id>github</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub OWNER Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/jast90/awesome-tools-java</url>
+                </repository>
+            </distributionManagement>
+        </profile>
         <profile>
             <id>default</id>
             <activation>
