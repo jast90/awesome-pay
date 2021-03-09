@@ -4,11 +4,11 @@ public class PageRequest {
     /**
      * 页号
      */
-    private long pageNumber;
+    private long pageNumber = 1;
     /**
      * 每页大小
      */
-    private long pageSize;
+    private long pageSize = 15;
 
     public long getPageNumber() {
         return pageNumber;
@@ -22,7 +22,7 @@ public class PageRequest {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(long pageSize) {
         this.pageSize = pageSize;
     }
 
